@@ -9,6 +9,8 @@
   "author": "Mark Sundt",
   "license": "ISC",
   "dependencies": {
-    "eddystone-beacon": "^1.0.6"
+    "body-parser": "^1.15.2",
+    "eddystone-beacon": "^1.0.6",
+    "express": "^4.14.0"
   }
 }

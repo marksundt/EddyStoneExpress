@@ -1,0 +1,14 @@
+{
+  "name": "nodeeddystone",
+  "version": "1.0.0",
+  "description": "NodeJS EddyStone Beacon",
+  "main": "beacon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Sundt",
+  "license": "ISC",
+  "dependencies": {
+    "eddystone-beacon": "^1.0.6"
+  }
+}

@@ -1,0 +1,44 @@
+<script type="text/javascript" id="clearent-hpp" src="https://hpp-sb.clearent.net/js/clearent.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    JSONTest = function(responseJSON) {
+        xhr = new XMLHttpRequest();
+        var url = "http://127.0.0.1:3000/charge";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+
+
+        xhr.send(responseJSON);
+
+    };
+
+
+    // Contact your Clearent representative for your sandbox public key
+    Clearent.payButton({
+        "pk": "307a301406072a8648ce3d020106092b240303020801010c036200047bdb2c346fa7be9ab99e92a8323a93c0eb07d36251a08db906025c024fabacaa3913bda7df28323ea1e6cf4e3979611027756dfa46c9c0ba5a76fb17dcace385cb301ca1dde5eec137813348eae02931cf8b4e3eed86a700e17b9c393434cc76",
+        "amount": "64.50"
+    });
+
+    // called after successful complete
+    function ClearentOnSuccess(responseRaw,ResponseJSON){
+        console.log("transaction successful");
+        console.log(responseRaw);
+        console.log(ResponseJSON);
+        JSONTest(ResponseJSON);
+    }
+
+    // called after failed complete
+    function ClearentOnError(responseRaw,ResponseJSON){
+        console.log("transaction failed");
+        console.log(responseRaw);
+        console.log(ResponseJSON);
+    }
+</script>
+<style>
+    .Clearent .Clearent-pay{
+        margin:30px;
+    }
+</style>
